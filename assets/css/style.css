@@ -1,23 +1,18 @@
+/*Colou Variables*/
 :root {
     --dark: rgb(30,30,30);
     --gold: rgb(240,230,140);
     --light: rgb(255, 255, 255);
 }
 
-*,:after,:before {
-    box-sizing: inherit;
-    margin: 0;
-    padding: 0;
-}
-
 body {
-    background-color: rgb(0,0,0);
-    overflow-y: scroll;
+    background-color: var(--dark);
     display: flex;
 }
 
+/*  Fix position of the sidebar to the left in a column*/
 .sideBar {
-    width: 150px;
+    width: 20vh;
     height: 100vh;
     position: fixed;
     top: 0;
@@ -29,14 +24,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--dark);
+    background-color: var(--light);
 }
 
-.nav-top {
-    display: flex;
-    width: 100%;
-}
-
+/* Nav Logo*/
 .logo {
     background: url(/assets/images/VM_LOGO.png) no-repeat center;
     width: 150px;
@@ -45,6 +36,7 @@ body {
     margin: 30px auto;
 }
 
+
 .nav-menu {
     width: 100%;
     height: 100%;
@@ -52,28 +44,29 @@ body {
     flex-direction: column;
     margin-top: 150px;
 }
-
+/*Menu*/
+/* Embossed letters with text-shadow */
 .nav-menu a {
     text-decoration: none;
     font-size: 36px;
     font-weight: 900;
     text-align: center;
     margin-bottom: 5px;
-    color: #333;
+    color: var(--gold);
     text-shadow: -1px -1px 1px rgb(240, 230, 140, 0.5),
-                  1px 1px 1px #333,
-                  2px 2px 1px #333;
+                  1px 1px 1px #333;
     color: rgb(100, 100, 100);
-        background-color: #3A3939;
-        box-shadow: inset 0 1px 1px rgb(29, 19, 29), 0 1px 0 0 rgb(70, 70, 70);
-}
+        background-color: var(--dark);
+    }
 
+/* Wrap the main and position it to the right so no overlapping occurs*/
 .wrapper {
     width: 100%;
     margin-left: 150px;
     overflow: hidden;
 }
 
+/* flex the header to create a row*/
 header {
     height: 100vh;
     display: flex;
@@ -83,8 +76,6 @@ header {
 }
 
 .about {
-    flex:  0 0 50%;
-    padding: 0 15px;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -97,12 +88,105 @@ header {
     height: 350px;
 }
 
+/* Space the letters for accessibility purposes with line-height*/
 .about-description {
-    flex: 0 0 45%;
-    padding: 0 15px;
     width: 100%;
     line-height: 1.2;
     font-size: 24px;
-    color: white;
+    color:var(--light);
 }
 
+/* Fit the section in the viewport with view height*/
+.work-section {
+    height: 100vh;
+}
+/*Section Tittle*/
+.work-section h2 {
+    font-size: 3em;
+    text-align: center;
+    margin: 10px 0 20px;
+    text-align: center;
+    border-bottom: 1px solid #000;
+}
+
+.work-section h2 span {
+    padding: 0 10px;
+}
+
+/* Center the projects in the middle of the viewport*/
+.work {
+    width: 80vw;
+    height: 85vh;
+    margin: 0 auto;
+}
+
+/* Curve the div and add a shadow to the box*/
+.work-main {
+    position: relative;
+    width: 100%;
+    height: 60%;
+    display: flex;
+    border-radius: 15px;
+    box-shadow:
+            0 -1.4px 1.7px rgba(255, 255, 255, 0.017),
+            0 -3.3px 4px rgba(255, 255, 255, 0.024),
+            0 -6.3px 7.5px rgba(255, 255, 255, 0.03),
+            0 1.4px 1.7px rgba(255, 255, 255, 0.017),
+            0 3.3px 4px rgba(255, 255, 255, 0.024),
+            0 6.3px 7.5px rgba(255, 255, 255, 0.03);
+}
+
+/* give the image opacity and a transition for the description*/
+.work-main img, .work-item img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+    object-fit: fill;
+    opacity: 0.5;
+    cursor: pointer;
+    border-radius: 15px;
+    transform: translate3d(-40px, 0 0);
+}
+
+.work-main h3 {
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    color: var(--light);
+    font-size: 3em;
+}
+
+/*bottom projects flexed in a row with space betwwen*/
+.work-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 3vh;
+    width: 100%;
+    height: 30vh;
+}
+
+.work-item {
+    position: relative;
+    overflow: hidden;
+    width: 49%;
+    height: 100%;
+    border-radius: 15px;
+    box-shadow:
+        0 -1.4px 1.7px rgba(255, 255, 255, 0.017),
+        0 -3.3px 4px rgba(255, 255, 255, 0.024),
+        0 -6.3px 7.5px rgba(255, 255, 255, 0.03),
+        0 1.4px 1.7px rgba(255, 255, 255, 0.017),
+        0 3.3px 4px rgba(255, 255, 255, 0.024),
+        0 6.3px 7.5px rgba(255, 255, 255, 0.03);
+
+}
+
+.work-item h3 {
+    position: absolute;
+        bottom: 0;
+        left: 20px;
+        color: var(--light);
+        font-size: 1.5em;
+}
