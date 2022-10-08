@@ -101,16 +101,31 @@ header {
     height: 100vh;
 }
 /*Section Tittle*/
-.work-section h2 {
+/* text shadow effects*/
+.work-section h2, .skills h2 {
     font-size: 3em;
-    text-align: center;
-    margin: 10px 0 20px;
-    text-align: center;
-    border-bottom: 1px solid #000;
+    text-align: left;
+    position: relative;
+    margin-left: 3vw;
+    text-shadow: 
+    0px -1.5px 1.5px rgb(240, 230, 140,0.5),
+    0px -1px 1px rgb(240,230,140,0.7),
+    0px 1px 1px rgb(240,230,140,0.7),
+    0px 1.5px 1.5px rgb(240, 230, 140,0.5);
+
 }
 
-.work-section h2 span {
-    padding: 0 10px;
+/* horizontal line before and after the section title*/
+.work-section h2::before, .work-section h2::after, .skills h2::before, .skills h2::after {
+    display: inline-block;
+        content: "";
+        border-top: .3rem solid rgba(0,0,0);
+        box-shadow: 
+        0 -1px 2px rgb(240, 230, 140,0.7),
+        0 1px 2px rgb(240,230,140,0.7);
+        width: 5rem;
+        margin: 0 1rem;
+        transform: translateY(-1rem);
 }
 
 /* Center the projects in the middle of the viewport*/
@@ -128,12 +143,12 @@ header {
     display: flex;
     border-radius: 15px;
     box-shadow:
-            0 -1.4px 1.7px rgba(255, 255, 255, 0.017),
-            0 -3.3px 4px rgba(255, 255, 255, 0.024),
-            0 -6.3px 7.5px rgba(255, 255, 255, 0.03),
-            0 1.4px 1.7px rgba(255, 255, 255, 0.017),
-            0 3.3px 4px rgba(255, 255, 255, 0.024),
-            0 6.3px 7.5px rgba(255, 255, 255, 0.03);
+            0 -1.4px 1.7px rgba(240, 230, 140, 0.017),
+            0 -3.3px 4px rgba(240, 230, 140, 0.024),
+            0 -6.3px 7.5px rgba(240, 230, 140, 0.03),
+            0 1.4px 1.7px rgba(240, 230, 140, 0.017),
+            0 3.3px 4px rgba(240, 230, 140, 0.024),
+            0 6.3px 7.5px rgba(240, 230, 140, 0.03);
 }
 
 /* give the image opacity and a transition for the description*/
@@ -157,7 +172,7 @@ header {
     font-size: 3em;
 }
 
-/*bottom projects flexed in a row with space betwwen*/
+/*bottom projects flexed in a row with space betwwen the items*/
 .work-row {
     display: flex;
     flex-direction: row;
@@ -174,12 +189,12 @@ header {
     height: 100%;
     border-radius: 15px;
     box-shadow:
-        0 -1.4px 1.7px rgba(255, 255, 255, 0.017),
-        0 -3.3px 4px rgba(255, 255, 255, 0.024),
-        0 -6.3px 7.5px rgba(255, 255, 255, 0.03),
-        0 1.4px 1.7px rgba(255, 255, 255, 0.017),
-        0 3.3px 4px rgba(255, 255, 255, 0.024),
-        0 6.3px 7.5px rgba(255, 255, 255, 0.03);
+        0 -1.4px 1.7px rgba(240, 230, 140, 0.017),
+        0 -3.3px 4px rgba(240, 230, 140, 0.024),
+        0 -6.3px 7.5px rgba(240, 230, 140, 0.03),
+        0 1.4px 1.7px rgba(240, 230, 140, 0.017),
+        0 3.3px 4px rgba(240, 230, 140, 0.024),
+        0 6.3px 7.5px rgba(240, 230, 140, 0.03);
 
 }
 
@@ -189,4 +204,53 @@ header {
         left: 20px;
         color: var(--light);
         font-size: 1.5em;
+}
+
+.icon-row {
+    width: 100vh;
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.icon-row i {
+    font-size: 5em;
+}
+
+.btn {
+    cursor: pointer;
+    text-shadow:
+            0px 0px 1px rgb(240,230,140, 0.3),
+            0px 0px 2px rgb(240,230,140, 0.3),
+            0px 0px 3px rgb(240,230,140, 0.3),
+            0px 0px 4px rgb(240,230,140, 0.3),
+            0px 0px 5px rgb(240,230,140, 0.3),
+            0px 0px 6px rgb(240,230,140, 0.3),
+            0px 0px 7px rgb(240,230,140, 0.3),
+            0px 0px 8px rgb(240,230,140, 0.3),
+            0px 0px 9px rgb(240,230,140, 0.3);
+        -webkit-transition: text-shadow 0.5s ease-in-out;
+        -moz-transition: text-shadow 0.5s ease-in-out;
+        -ms-transition: text-shadow 0.5s ease-in-out;
+        -o-transition: text-shadow 0.5s ease-in-out;
+        transition: text-shadow 0.5s ease-in-out;
+}
+
+.btn:hover {
+    text-shadow:
+            0px 0px 1px rgb(240,230,140),
+            0px 0px 2px rgb(240,230,140),
+            0px 0px 3px rgb(240,230,140),
+            0px 0px 4px rgb(240,230,140),
+            0px 0px 5px rgb(240,230,140),
+            0px 0px 6px rgb(240,230,140),
+            0px 0px 7px rgb(240,230,140),
+            0px 0px 8px rgb(240,230,140),
+            0px 0px 9px rgb(240,230,140),
+            0px 0px 10px rgb(240,230,140),
+            0px 0px 11px rgb(240,230,140),
+            0px 0px 12px rgb(240,230,140);
 }
