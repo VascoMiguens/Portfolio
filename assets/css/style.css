@@ -5,9 +5,17 @@
     --light: rgb(255, 255, 255);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--dark);
     display: flex;
+}
+
+a {
+    width: 100%;
 }
 
 /*  Fix position of the sidebar to the left in a column*/
@@ -222,9 +230,12 @@ footer h2::before, footer h2::after {
 .icon-row i {
     font-size: 5em;
 }
-/* Text shadow creates the gold background on the icons*/
+/* Text shadow creates the gold background on the icons
+**color inherit to remove the default color of the anchor
+*/
 .btn {
     cursor: pointer;
+    color: inherit;
     text-shadow:
             0 0 1px rgb(240,230,140, 0.3),
             0 0 2px rgb(240,230,140, 0.3),
