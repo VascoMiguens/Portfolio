@@ -1,6 +1,6 @@
 /*Colou Variables*/
 :root {
-    --dark: rgb(30,30,30);
+    --dark: rgb(12,19,26);
     --gold: rgb(240,230,140);
     --light: rgb(255, 255, 255);
 }
@@ -30,7 +30,7 @@ body {
 /* Nav Logo*/
 .logo {
     background: url(/assets/images/VM_LOGO.png) no-repeat center;
-    width: 150px;
+    width: 9.375em;
     height: 100px;
     display: block;
     margin: 30px auto;
@@ -97,12 +97,12 @@ header {
 }
 
 /* Fit the section in the viewport with view height*/
-.work-section {
+#work-section {
     height: 100vh;
 }
-/*Section Tittle*/
+/*Section Title*/
 /* text shadow effects*/
-.work-section h2, .skills h2 {
+#work-section h2, #skills h2, footer h2 {
     font-size: 3em;
     text-align: left;
     position: relative;
@@ -114,9 +114,11 @@ header {
     0px 1.5px 1.5px rgb(240, 230, 140,0.5);
 
 }
-
-/* horizontal line before and after the section title*/
-.work-section h2::before, .work-section h2::after, .skills h2::before, .skills h2::after {
+/*Section Title
+ **Horizontal line before and after the section title*/
+#work-section h2::before, #work-section h2::after,
+#skills h2::before, #skills h2::after,
+footer h2::before, footer h2::after {
     display: inline-block;
         content: "";
         border-top: .3rem solid rgba(0,0,0);
@@ -161,7 +163,6 @@ header {
     opacity: 0.5;
     cursor: pointer;
     border-radius: 15px;
-    transform: translate3d(-40px, 0 0);
 }
 
 .work-main h3 {
@@ -181,7 +182,7 @@ header {
     width: 100%;
     height: 30vh;
 }
-
+/* position relative to place the tittle above the image*/
 .work-item {
     position: relative;
     overflow: hidden;
@@ -197,7 +198,7 @@ header {
         0 6.3px 7.5px rgba(240, 230, 140, 0.03);
 
 }
-
+/*Project Title with absolute positioning*/
 .work-item h3 {
     position: absolute;
         bottom: 0;
@@ -206,6 +207,8 @@ header {
         font-size: 1.5em;
 }
 
+/*Skills Sections*/
+/*display flew in a row direction to place the icons side by side*/
 .icon-row {
     width: 100vh;
     height: 80vh;
@@ -219,19 +222,19 @@ header {
 .icon-row i {
     font-size: 5em;
 }
-
+/* Text shadow creates the gold background on the icons*/
 .btn {
     cursor: pointer;
     text-shadow:
-            0px 0px 1px rgb(240,230,140, 0.3),
-            0px 0px 2px rgb(240,230,140, 0.3),
-            0px 0px 3px rgb(240,230,140, 0.3),
-            0px 0px 4px rgb(240,230,140, 0.3),
-            0px 0px 5px rgb(240,230,140, 0.3),
-            0px 0px 6px rgb(240,230,140, 0.3),
-            0px 0px 7px rgb(240,230,140, 0.3),
-            0px 0px 8px rgb(240,230,140, 0.3),
-            0px 0px 9px rgb(240,230,140, 0.3);
+            0 0 1px rgb(240,230,140, 0.3),
+            0 0 2px rgb(240,230,140, 0.3),
+            0 0 3px rgb(240,230,140, 0.3),
+            0 0 4px rgb(240,230,140, 0.3),
+            0 0 5px rgb(240,230,140, 0.3),
+            0 0 6px rgb(240,230,140, 0.3),
+            0 0 7px rgb(240,230,140, 0.3),
+            0 0 8px rgb(240,230,140, 0.3),
+            0 0 9px rgb(240,230,140, 0.3);
         -webkit-transition: text-shadow 0.5s ease-in-out;
         -moz-transition: text-shadow 0.5s ease-in-out;
         -ms-transition: text-shadow 0.5s ease-in-out;
@@ -241,16 +244,142 @@ header {
 
 .btn:hover {
     text-shadow:
-            0px 0px 1px rgb(240,230,140),
-            0px 0px 2px rgb(240,230,140),
-            0px 0px 3px rgb(240,230,140),
-            0px 0px 4px rgb(240,230,140),
-            0px 0px 5px rgb(240,230,140),
-            0px 0px 6px rgb(240,230,140),
-            0px 0px 7px rgb(240,230,140),
-            0px 0px 8px rgb(240,230,140),
-            0px 0px 9px rgb(240,230,140),
-            0px 0px 10px rgb(240,230,140),
-            0px 0px 11px rgb(240,230,140),
-            0px 0px 12px rgb(240,230,140);
+            0 0 1px rgb(240,230,140),
+            0 0 2px rgb(240,230,140),
+            0 0 3px rgb(240,230,140),
+            0 0 4px rgb(240,230,140),
+            0 0 5px rgb(240,230,140),
+            0 0 6px rgb(240,230,140),
+            0 0 7px rgb(240,230,140),
+            0 0 8px rgb(240,230,140),
+            0 0 9px rgb(240,230,140),
+            0 0 10px rgb(240,230,140),
+            0 0 11px rgb(240,230,140),
+            0 0 12px rgb(240,230,140);
+}
+
+/* Footer */
+#contacts-section {
+    width: 100%;
+    height: 95vh;
+}
+
+/* align section with margin */
+.contacts {
+    display: flex;
+    margin-left: 4vw;
+}
+
+/* flex in a column to position text above box */
+.contacts label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* allows fontawesome icon inside placeholder */
+.contacts input {
+    font-family: FontAwesome;
+}
+
+/* form input 
+** inset the box and give it a "border gold line" */
+.contacts input, .contacts textarea {
+    border: 0;
+    outline: 0;
+    width: 500px;
+    border-radius: 10px;
+    padding: 7.5px;
+    color: #fff;
+    background-color: transparent;
+    text-shadow: 1px 1px rgb(30,30,30);
+    box-shadow: inset 1px 1px 3px rgb(240,230,140,0.9), inset -1px -1px 2px rgb(240,230,140.7);
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.contacts textarea {
+    height: 200px;
+}
+
+.contacts p {
+    color: rgb(100,100,100);
+    font-size: 1.3em;
+    text-shadow: -.5px -.5px .5px rgb(240, 230, 140, 0.4),
+            1px 1px 1px #333;
+}
+
+/* Send Message Button
+** position relative to allow the effect to be positioned above the button
+*** hide the overflow content
+** 
+*/
+button {
+    width: 250px;
+    height: 50px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 10px;
+    color: rgb(100,100,100);
+    text-shadow: -.5px -.5px .5px rgb(240, 230, 140, 0.4),
+            1px 1px 1px #333;
+    box-shadow: inset 1px 1px 3px rgb(240, 230, 140, 0.9), inset -1px -1px 2px rgb(240, 230, 140.7);
+    align-items: center;
+    font-size: 16px;
+    position: relative;
+    overflow: hidden;
+    margin: 10px auto;
+    background: transparent;
+    text-transform: uppercase;
+}
+
+/* position the button effect on top of the button 
+** .3 seconds of transition
+*/
+button:before,
+button:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: -100%;
+    left: 0;
+    background: var(--gold);
+    z-index: -1;
+    transition: all .35s;
+}
+
+/* first layer of the transition with opacity */
+button:before {
+    opacity: .5;
+}
+
+/* delay the transition to give it a second layer*/
+button:after {
+    transition-delay: .2s;
+}
+
+button:hover {
+    color: rgb(100, 100, 100);
+}
+
+button:hover:before,
+button:hover:after {
+    top: 0;
+}
+
+/* align items in the center of the row
+** gap attribute gives a space between the icons
+*/
+.footer-icons {
+    font-size: 5em;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    gap: 3vw;
+}
+
+/* Match third label form and display it as grid to center the button*/
+label:nth-child(3) {
+    display: grid;
 }
