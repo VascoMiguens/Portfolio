@@ -442,7 +442,7 @@ label:nth-child(3) {
     font-size: 20px;
     margin-top: 15px;
   }
-  
+
   #about-section {
     display: flex;
     flex-direction: column;
